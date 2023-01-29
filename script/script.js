@@ -1,18 +1,21 @@
 // elements
+// player select card elements
 const selectBoxEl = document.querySelector(".player-select"),
   select_X_btn = selectBoxEl.querySelector(".playerX"),
   select_O_btn = selectBoxEl.querySelector(".playerO");
 
+// play board elements
 const playBoardEl = document.querySelector(".play-board"),
   allBoxEl = document.querySelectorAll("section span"),
   playerEl = document.querySelector(".players");
 
+// result card elements
 const resultBoxEl = document.querySelector(".result-box"),
   wonTextEl = document.querySelector(".won-text"),
   playAgainBtn = document.querySelector(".btn");
 
 // global variables
-let playerSign = "X"; //suppose player will be x
+let playerSign = "X"; // initially we consider player will be x
 let runBot = true; //we used this variable to stop the bot once match won by someone or drawn
 
 // functions
@@ -20,22 +23,21 @@ let runBot = true; //we used this variable to stop the bot once match won by som
 function clickedBox(element) {
   // if players element contains .players
   if (playerEl.classList.contains("player")) {
-    // if player
-    element.innerHTML = `<i class="fa-solid fa-o"></i>`;
+    element.innerHTML = `<i class="fa-solid fa-o"></i>`; // X icon
     playerEl.classList.add("active");
     // if user ID is X , bot ID will be O
     playerSign = "O";
     element.setAttribute("id", playerSign);
   } else {
-    element.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    element.innerHTML = `<i class="fa-solid fa-xmark"></i>`; //O icon
     playerEl.classList.add("active");
     element.setAttribute("id", playerSign);
   }
   selectWinner(); //calling selectWinner function
   element.style.pointerEvents = "none";
-  playBoardEl.style.pointerEvents = "none"; //add pointerEvents none to playboard so user can't immediately click on any other box until bot select
-  // let randomDelayTime = (Math.random() * 1000 + 200).toFixed();
-  // console.log(randomDelayTime);
+  //add pointerEvents none to playboard so user can't immediately click on any other box until bot select
+  playBoardEl.style.pointerEvents = "none";
+
   // passing delay time to bot click function
   setTimeout(() => {
     botClick(runBot);
@@ -115,15 +117,15 @@ function selectWinner() {
   } else {
     //if all boxes/element have id value and still no one win then draw the match
     if (
-      getId(1) != "" &&
-      getId(2) != "" &&
-      getId(3) != "" &&
-      getId(4) != "" &&
-      getId(5) != "" &&
-      getId(6) != "" &&
-      getId(7) != "" &&
-      getId(8) != "" &&
-      getId(9) != ""
+      getId(1) !== "" &&
+      getId(2) !== "" &&
+      getId(3) !== "" &&
+      getId(4) !== "" &&
+      getId(5) !== "" &&
+      getId(6) !== "" &&
+      getId(7) !== "" &&
+      getId(8) !== "" &&
+      getId(9) !== ""
     ) {
       //passing the false boolen value to runBot so bot won't run again
       runBot = false;
@@ -133,7 +135,7 @@ function selectWinner() {
         resultBoxEl.classList.add("show");
         playBoardEl.classList.remove("show");
       }, 700);
-      wonTextEl.textContent = "Match has been drawn!"; //displaying draw match text
+      wonTextEl.textContent = "Match Draw!"; //displaying draw match text
     }
   }
 }
@@ -157,7 +159,7 @@ window.addEventListener("load", () => {
   });
 });
 
-// play agaim btn
+// play again btn
 playAgainBtn.addEventListener("click", () => {
   //reload the current page on replay button click
   window.location.reload();

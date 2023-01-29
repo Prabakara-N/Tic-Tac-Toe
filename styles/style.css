@@ -43,7 +43,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url(../images/main\ bg.jpg);
+  background-image: url(../images/bg\ img.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -104,7 +104,7 @@ p {
   font-weight: 500;
 }
 
-/* button x&o */
+/* button x&o play again btn */
 .btn-container {
   display: flex;
   justify-content: space-around;
@@ -227,6 +227,7 @@ button:active {
 .players.active {
   border-radius: 5px;
 }
+
 /* slider */
 .players .slider {
   position: absolute;
@@ -238,6 +239,7 @@ button:active {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
+
 .players.active .slider {
   left: 50%;
 }
@@ -245,6 +247,7 @@ button:active {
 .players.active span:first-child {
   color: aliceblue;
 }
+
 .players.active span:nth-child(2) {
   color: aliceblue;
 }
@@ -277,10 +280,10 @@ button:active {
 }
 
 .fa-o {
-  font-size: 2.25rem;
+  font-size: 2.2rem;
 }
-/* result card */
 
+/* result card */
 .result-box {
   opacity: 0;
   pointer-events: none;
@@ -320,12 +323,6 @@ button:active {
   button {
     font-size: 14px;
     padding: 10px 20px;
-  }
-
-  .current-player {
-    width: 260px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
   }
 
   .player-select,
