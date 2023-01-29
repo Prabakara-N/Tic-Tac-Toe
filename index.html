@@ -7,7 +7,7 @@
     <!-- Custom Favicon -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
 
-    <title>Template</title>
+    <title>Tic-Tac-Toe</title>
 
     <!-- FontAwesome -->
     <link
@@ -26,6 +26,53 @@
   </head>
   <body>
     <!-- Custom JavaScript -->
+    <!-- main -->
+    <main>
+      <!-- player select -->
+      <div class="player-select">
+        <h1>Tic Tac Toe</i></h1>
+        <p>Select which you want to be ?</p>
+        <div class="btn-container">
+          <button class="playerX">Player (X)</button>
+          <button class="playerO">Player (O)</button>
+        </div>
+      </div>
+
+      <!-- playboard section -->
+      <div class="play-board">
+        <div class="details">
+          <div class="players">
+            <span class="Xturn">X's Turn</span>
+            <span class="Oturn">O's Turn</span>
+            <div class="slider"></div>
+          </div>
+        </div>
+        <div class="play-area">
+          <section>
+            <span class="box1"></span>
+            <span class="box2"></span>
+            <span class="box3"></span>
+          </section>
+          <section>
+            <span class="box4"></span>
+            <span class="box5"></span>
+            <span class="box6"></span>
+          </section>
+          <section>
+            <span class="box7"></span>
+            <span class="box8"></span>
+            <span class="box9"></span>
+          </section>
+        </div>
+      </div>
+
+      <!-- result box -->
+      <div class="result-box">
+        <p class="won-text">Player <span>X</span>- Won The Game!</p>
+        <div class="btn"><button>Play Again</button></div>
+      </div>
+    </main>
+
     <script src="./script/script.js"></script>
   </body>
 </html>
