@@ -73,7 +73,8 @@ function botClick() {
     }
     // we cant select any box if bot fill any box
     allBoxEl[randomBox].style.pointerEvents = "none";
-    playBoardEl.style.pointerEvents = "auto"; //add pointerEvents auto in playboard so user can again click on box
+    //add pointerEvents auto in playboard so user can again click on box
+    playBoardEl.style.pointerEvents = "auto";
     playerSign = "X";
   }
 }
@@ -105,7 +106,7 @@ function selectWinner() {
     checkIdSign(1, 5, 9, playerSign) ||
     checkIdSign(3, 5, 7, playerSign)
   ) {
-    runBot = false; //passing the false boolen value to runBot so bot won't run again
+    runBot = false; //passing the false value to runBot so bot won't run again
     botClick(runBot); //calling bot function
     setTimeout(() => {
       //after match won by someone then hide the playboard and show the result box after 700ms
